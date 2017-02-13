@@ -1,0 +1,9 @@
+<view class="container">
+	<view class="movie-list" wx:for="{{ movies }}" wx:key="{{ item.id }}">
+		<image class="movie-post" src="{{ item.images.large }}" mode="aspectFill" />
+		<view class="movie-text">
+			<text class="movie-title">{{ item.title }}</text>
+			<text class="movie-rating">{{ item.rating.average }}</text>
+		</view>
+	</view>
+</view>

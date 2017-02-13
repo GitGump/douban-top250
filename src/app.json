@@ -1,0 +1,19 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/logs/logs"
+	],
+	"window": {
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "",
+		"backgroundTextStyle": "dark",
+		"navigationBarTitleText": "Douban Movie Top250",
+		"navigationBarTextStyle": "black",
+		"enablePullDownRefresh": "false"
+	},
+	"networkTimeout": {
+		"request": 10000,
+		"downloadFile": 10000
+	},
+	"debug": true
+}
