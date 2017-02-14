@@ -7,7 +7,7 @@
 		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "",
 		"backgroundTextStyle": "dark",
-		"navigationBarTitleText": "Douban Movie Top250",
+		"navigationBarTitleText": "豆瓣电影 Top250",
 		"navigationBarTextStyle": "black",
 		"enablePullDownRefresh": "false"
 	},

@@ -1,9 +1,19 @@
 <view class="container">
-	<view class="movie-list" wx:for="{{ movies }}" wx:key="{{ item.id }}">
-		<image class="movie-post" src="{{ item.images.large }}" mode="aspectFill" />
-		<view class="movie-text">
-			<text class="movie-title">{{ item.title }}</text>
-			<text class="movie-rating">{{ item.rating.average }}</text>
-		</view>
+	<view class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx-key="item.id">
+		<image class="movie-post" src="{{ movie.images.large }}" />
+		<block class="movie-info">
+			<text class="movie-title">{{ movie.title }}</text>
+			<text class="movie-director">{{ movieText.director + movie.directors[0].name }}</text>
+			<text class="movie-casts">{{ movieText.casts }}</text>
+			<block wx:for="{{ movie.casts }}" wx:for-item="cast">
+				<text class="movie-cast">{{ cast.name }}</text>
+			</block>
+			<text class="movie-year">{{ movieText.year + movie.year }}</text>
+		</block>
+		<text class="movie-rating">{{ movieText.rating + movie.rating.average }}</text>
+	</view>
+	<loading hidden="{{ !isLoading }}">{{ loadingText }}</loading>
+	<view class="bottom-tip" hidden="{{ hasMore }}">
+		<text>{{ noMoreData }}</text>
 	</view>
 </view>

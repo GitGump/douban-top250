@@ -1,36 +1,60 @@
 .movie-list {
+    position: relative;
     width: 96%;
     left: 2%;
-    right: 2%;
-    height: 12rem;
-    position: relative;
+    height: 6rem;
     margin: 5px 0 5px 0;
+    padding: 5px;
     border: 1px solid #ddd;
-}
-
-.movie-index {
-
 }
 
 .movie-post {
     position: absolute;
-    width: 100%;
-    height: 12rem;
-    z-index: 0;
-    opacity: .8;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
 }
 
-.movie-text {
-    position: absolute;
-    width: 98%;
-    bottom: 0;
+.movie-info {
+
+}
+
+.movie-title {
+    position: relative;
     display: block;
-    padding: 5px;
-    background: #000;
-    opacity: .3;
-    z-index: 1;
+    margin: 5px 0 5px 110px;
+    font-size: 16px;
+    font-weight: blod;
+    color: #000;
 }
 
-.movie-title, .movie-rating {
-    color: #fff;
+.movie-director, .movie-year, .movie-rating{
+    display: block;
+    margin: 5px 0 5px 110px;
+    font-size: 12px;
+    color: #999;
+    clear: left;
+}
+
+.movie-casts {
+    margin: 5px 0 5px 110px;
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    overflow: hidden;
+}
+
+.movie-cast {
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    margin-right: 5px;
+}
+
+.bottom-tip {
+    position: relative;
+    text-align: center;
+    color: #333;
 }
