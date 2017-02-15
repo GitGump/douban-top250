@@ -1,16 +1,15 @@
 <view class="container">
-	<view class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx-key="item.id">
-		<image class="movie-post" src="{{ movie.images.large }}" />
-		<block class="movie-info">
-			<text class="movie-title">{{ movie.title }}</text>
-			<text class="movie-director">{{ movieText.director + movie.directors[0].name }}</text>
-			<text class="movie-casts">{{ movieText.casts }}</text>
-			<block wx:for="{{ movie.casts }}" wx:for-item="cast">
-				<text class="movie-cast">{{ cast.name }}</text>
-			</block>
-			<text class="movie-year">{{ movieText.year + movie.year }}</text>
-		</block>
-		<text class="movie-rating">{{ movieText.rating + movie.rating.average }}</text>
+	<view class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx:key="movie.id">
+		<navigator url="../item/item?id={{ movie.id }}">
+			<image class="movie-post" src="{{ movie.images.large }}" />
+			<view class="movie-info">
+				<text class="movie-title">{{ movie.title }}</text>
+				<text class="movie-director">{{ movieText.director + movie.directors[0].name }}</text>
+				<text class="movie-casts">{{ movieText.casts }}<block wx:for="{{ movie.casts }}" wx:for-item="cast">{{ cast.name + ' ' }}</block></text>
+				<text class="movie-year">{{ movieText.year + movie.year }}</text>
+			</view>
+			<text class="movie-rating">{{ movieText.rating + movie.rating.average }}</text>
+		</navigator>
 	</view>
 	<loading hidden="{{ !isLoading }}">{{ loadingText }}</loading>
 	<view class="bottom-tip" hidden="{{ hasMore }}">

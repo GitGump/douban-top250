@@ -24,7 +24,7 @@ Page({
 		var startIndex = (that.data.page - 1) * that.data.count + 1;
 		var endIndex = that.data.page * that.data.count;
 		that.data.isLoading = true;
-		app.douban.find(app.data.type.top250, that.data.page, that.data.count, function(res) {
+		app.douban.findMovieByType(app.data.type.top250, that.data.page, that.data.count, function(res) {
 			that.setData({
 				movies: res.data.subjects,
 				page: ++that.data.page,
@@ -49,7 +49,7 @@ Page({
 		that.setData({
 			isLoading: true
 		});
-		app.douban.find(app.data.type.top250, that.data.page, that.data.count, function(res) {
+		app.douban.findMovieByType(app.data.type.top250, that.data.page, that.data.count, function(res) {
 			that.setData({
 				isLoading: !that.data.isLoading
 			});

@@ -1,15 +1,16 @@
 .movie-list {
     position: relative;
-    width: 96%;
-    left: 2%;
+    width: 94%;
     height: 6rem;
-    margin: 5px 0 5px 0;
+    margin: 5px auto;
     padding: 5px;
     border: 1px solid #ddd;
+    background: #eee;
 }
 
 .movie-post {
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
     width: 100px;
@@ -17,13 +18,14 @@
 }
 
 .movie-info {
-
+    position: relative;
+    display: block;
 }
 
 .movie-title {
     position: relative;
     display: block;
-    margin: 5px 0 5px 110px;
+    margin: 8px 0 0 110px;
     font-size: 16px;
     font-weight: blod;
     color: #000;
@@ -31,26 +33,17 @@
 
 .movie-director, .movie-year, .movie-rating{
     display: block;
-    margin: 5px 0 5px 110px;
+    margin: 8px 0 0 110px;
     font-size: 12px;
     color: #999;
     clear: left;
 }
 
 .movie-casts {
-    margin: 5px 0 5px 110px;
-    display: inline-block;
+    margin: 8px 0 0 110px;
+    display: block;
     font-size: 12px;
     color: #999;
-    overflow: hidden;
-}
-
-.movie-cast {
-    margin: 5px 0 5px 0;
-    display: inline-block;
-    font-size: 12px;
-    color: #999;
-    margin-right: 5px;
 }
 
 .bottom-tip {

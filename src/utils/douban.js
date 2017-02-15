@@ -2,7 +2,7 @@
 
 var douban_uri = 'https://api.douban.com/v2/movie';
 
-function find(type, page, count, successCB, failCB) {
+function findMovieByType(type, page, count, successCB, failCB) {
 	if (!type) {
 		type = '';
 	}
@@ -23,7 +23,19 @@ function find(type, page, count, successCB, failCB) {
 	});
 }
 
+function findMovieById(id, successCB, failCB) {
+	wx.request({
+		url: douban_uri + '/subject/' + id,
+		header: {
+			'Content-type' : 'json'
+		},
+		success: successCB,
+		fail: failCB
+	});
+}
+
 module.exports = {
-	find: find,
+	findMovieByType: findMovieByType,
+	findMovieById: findMovieById,
 	douban_uri: douban_uri
 }
