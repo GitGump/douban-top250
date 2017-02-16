@@ -1,14 +1,11 @@
 <view class="container">
 	<view class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx:key="movie.id">
 		<navigator url="../item/item?id={{ movie.id }}">
-			<image class="movie-post" src="{{ movie.images.large }}" />
+			<image class="movie-post" src="{{ movie.images.large }}" mode="aspectFit"/>
 			<view class="movie-info">
 				<text class="movie-title">{{ movie.title }}</text>
-				<text class="movie-director">{{ commonStr.movie.director + movie.directors[0].name }}</text>
-				<text class="movie-casts">{{ commonStr.movie.casts }}<block wx:for="{{ movie.casts }}" wx:for-item="cast">{{ cast.name }} </block></text>
-				<text class="movie-year">{{ commonStr.movie.year + movie.year }}</text>
+				<text class="movie-rating">{{ commonStr.movie.rating + movie.rating.average }}</text>
 			</view>
-			<text class="movie-rating">{{ commonStr.movie.rating + movie.rating.average }}</text>
 		</navigator>
 	</view>
 	<loading hidden="{{ !isLoading }}">{{ commonStr.loading }}</loading>

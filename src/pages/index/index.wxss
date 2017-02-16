@@ -1,45 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 96%;
+    margin-left: 2%;
+}
+
 .movie-list {
-    position: relative;
-    width: 94%;
-    height: 6rem;
-    margin: 10rpx auto;
-    padding: 10rpx;
-    border: 2rpx solid #ddd;
-    background: #eee;
+    display: block;
+    margin: 30rpx 0;
 }
 
 .movie-post {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 200rpx;
-    height: 100%;
+    width: 210rpx;
+    height: 300rpx;
 }
 
 .movie-info {
     position: relative;
     display: block;
+    width: 210rpx;
 }
 
-.movie-title {
-    position: relative;
+.movie-title, .movie-rating {
     display: block;
-    margin: 0 0 0 220rpx;
-    font-size: 32rpx;
-    font-weight: blod;
+    text-align: left;
     color: #000;
-}
-
-.movie-director, .movie-year, .movie-casts, .movie-rating{
-    display: block;
-    margin: 16rpx 0 0 220rpx;
     font-size: 24rpx;
-    color: #999;
 }
 
 .bottom-tip {
-    position: relative;
-    text-align: center;
-    color: #333;
+    display: block;
+    margin: 160rpx auto;
 }

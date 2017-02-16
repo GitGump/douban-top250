@@ -6,7 +6,7 @@ Page({
 	data: {
 		movies: [],
 		page: 1,
-		count: 10,
+		count: 15,
 		hasMore: true,
 		isLoading: "false",
 		indexStr: app.str.index,
@@ -22,14 +22,14 @@ Page({
 			that.setData({
 				movies: res.data.subjects,
 				page: ++that.data.page,
-				isLoading: !that.data.isLoading
+				isLoading: false
 			});
 			console.warn("Got No. from " + startIndex + " to " + endIndex + " movies, they are: ");
 			console.dir(res.data.subjects);
 			console.warn("So far we've got " + endIndex + " movies totally!");
 		}, function(e) {
 			that.setData({
-				isLoading: !that.data.isLoading
+				isLoading: false
 			});
 			console.error("Error occues as fetching data, see more info: ");
 			console.dir(e);
@@ -45,11 +45,13 @@ Page({
 		});
 		app.douban.findMovieByType(app.data.type.top250, that.data.page, that.data.count, function(res) {
 			that.setData({
-				isLoading: !that.data.isLoading
+				isLoading: false
 			});
 
 			if (!res.data.subjects.length) {
-				that.data.hasMore = false;
+				that.setData({
+					hasMore: false
+				});
 				console.warn("No more data!");
 				return;
 			}
@@ -63,7 +65,7 @@ Page({
 			console.warn("So far we've got " + endIndex + " movies totally!");
 		}, function(res) {
 			that.setData({
-				isLoading: !that.data.isLoading
+				isLoading: false
 			});
 
 			console.error("Error occurs as fetching data!")

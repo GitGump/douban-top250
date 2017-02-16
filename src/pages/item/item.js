@@ -1,4 +1,6 @@
 // pages/item/item.js
+'use strict';
+
 var app = getApp();
 
 Page({

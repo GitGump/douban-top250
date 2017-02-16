@@ -1,9 +1,9 @@
 var str = {
 	common: {
 		loading: "加载中...",
-		noMoreData: "没有更多数据了",
+		noMoreData: "没有更多数据了:)",
 		movieType: {
-			inTheatres: "正在上映",
+			inTheatres: "正在热映",
 			comingSoon: "即将上映",
 			top250: "Top 250"
 		},

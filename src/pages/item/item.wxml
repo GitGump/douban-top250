@@ -1,5 +1,5 @@
 <view class="container">
-  <loading hidden="{{ !isLoading }}">{{ app.str.loading }}</loading>
+  <loading hidden="{{ !isLoading }}">{{ commonStr.loading }}</loading>
   <image class="background" src="{{ movie.images.large }}" mode="aspectFill"/>
   <view class="container" wx:if="{{ movie.title }}">
     <view class="meta">
