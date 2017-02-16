@@ -1,17 +1,17 @@
 <view class="container">
-  <loading hidden="{{ !isLoading }}">加载中...</loading>
+  <loading hidden="{{ !isLoading }}">{{ app.str.loading }}</loading>
   <image class="background" src="{{ movie.images.large }}" mode="aspectFill"/>
-  <scroll-view class="container" scroll-y="true" wx:if="{{ movie.title }}">
+  <view class="container" wx:if="{{ movie.title }}">
     <view class="meta">
       <image class="poster" src="{{ movie.images.large }}" mode="aspectFit"/>
       <text class="title">{{ movie.title }}({{ movie.year }})</text>
-      <text class="info">评分：{{ movie.rating.average }}</text>
-      <text class="info">导演：<block wx:for="{{ movie.directors }}" wx:key="{{ item.id }}"> {{ item.name }} </block></text>
-      <text class="info">主演：<block wx:for="{{ movie.casts }}" wx:key="{{ item.id }}"> {{ item.name }} </block></text>
+      <text class="info">{{ commonStr.movie.rating + movie.rating.average }}</text>
+      <text class="info">{{ commonStr.movie.director }}<block wx:for="{{ movie.directors }}" wx:for-item="director" wx:key="{{ director.id }}">{{ director.name }}</block></text>
+      <text class="info">{{ commonStr.movie.casts }}<block wx:for="{{ movie.casts }}" wx:for-item="cast" wx:key="{{ cast.id }}">{{ cast.name }} </block></text>
     </view>
     <view class="summary">
-      <text class="label">摘要：</text>
+      <text class="label">{{ commonStr.movie.content }}</text>
       <text class="content">{{ movie.summary }}</text>
     </view>
-  </scroll-view>
+  </view>
 </view>

@@ -1,6 +1,7 @@
 'use strict';
 
 var douban = require('./utils/douban.js');
+var str = require('./utils/str.js');
 
 App({
 	data: {
@@ -14,6 +15,8 @@ App({
 	},
 
 	douban: douban,
+
+	str: str,
 
   onLaunch: function() {
 

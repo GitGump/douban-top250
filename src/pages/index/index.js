@@ -8,15 +8,9 @@ Page({
 		page: 1,
 		count: 10,
 		hasMore: true,
-		noMoreData: "没有更多数据了",
-		loadingText: "正在加载中...",
 		isLoading: "false",
-		movieText: {
-			director: "导演：",
-			casts: "主演：",
-			year: "上映年份：",
-			rating: "评分："
-		}
+		indexStr: app.str.index,
+		commonStr: app.str.common
 	},
 
 	onLoad: function() {

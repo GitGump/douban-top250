@@ -6,7 +6,9 @@ Page({
     title: '',
     id: '',
     movie: {},
-    isLoading: false
+    isLoading: false,
+    itemStr: app.str.item,
+    commonStr: app.str.common
   },
 
   loadMovie: function(id) {

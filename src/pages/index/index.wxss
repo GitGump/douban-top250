@@ -2,9 +2,9 @@
     position: relative;
     width: 94%;
     height: 6rem;
-    margin: 5px auto;
-    padding: 5px;
-    border: 1px solid #ddd;
+    margin: 10rpx auto;
+    padding: 10rpx;
+    border: 2rpx solid #ddd;
     background: #eee;
 }
 
@@ -13,7 +13,7 @@
     display: block;
     top: 0;
     left: 0;
-    width: 100px;
+    width: 200rpx;
     height: 100%;
 }
 
@@ -25,24 +25,16 @@
 .movie-title {
     position: relative;
     display: block;
-    margin: 8px 0 0 110px;
-    font-size: 16px;
+    margin: 0 0 0 220rpx;
+    font-size: 32rpx;
     font-weight: blod;
     color: #000;
 }
 
-.movie-director, .movie-year, .movie-rating{
+.movie-director, .movie-year, .movie-casts, .movie-rating{
     display: block;
-    margin: 8px 0 0 110px;
-    font-size: 12px;
-    color: #999;
-    clear: left;
-}
-
-.movie-casts {
-    margin: 8px 0 0 110px;
-    display: block;
-    font-size: 12px;
+    margin: 16rpx 0 0 220rpx;
+    font-size: 24rpx;
     color: #999;
 }
 
