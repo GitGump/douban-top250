@@ -5,11 +5,10 @@
 		"pages/logs/logs"
 	],
 	"window": {
-		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "",
+		"navigationBarBackgroundColor": "#009688",
 		"backgroundTextStyle": "dark",
-		"navigationBarTitleText": "豆瓣电影 Top250",
-		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "豆瓣电影 TOP250",
+		"navigationBarTextStyle": "light",
 		"enablePullDownRefresh": "false"
 	},
 	"networkTimeout": {

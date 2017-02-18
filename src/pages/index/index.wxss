@@ -23,9 +23,25 @@
     width: 210rpx;
 }
 
-.movie-title, .movie-rating {
+.movie-title {
     display: block;
     text-align: left;
+    color: #000;
+    font-size: 24rpx;
+}
+
+.movie-rating-title {
+    color: #000;
+    font-size: 24rpx;
+}
+
+.movie-rating {
+    color: #009688;
+    font-size: 36rpx;
+    font-family: Georgia, Helvetica;
+}
+
+.movie-rating-count {
     color: #000;
     font-size: 24rpx;
 }

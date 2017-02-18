@@ -7,48 +7,56 @@
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .1;
 }
 
-.meta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50rpx 40rpx;
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  height: 200rpx;
+  background: #fff;
+  padding: 20rpx 32rpx;
+  opacity: .9;
+  overflow: hidden;
 }
 
-.poster {
-  width: 100%;
-  height: 800rpx;
-  margin: 20rpx;
+.movie-title {
+  display: block;
+  font-size: 56rpx;
+  margin: 10rpx 0;
 }
 
-.title {
-  font-style: 42rpx;
-  color: #fff;
+.movie-rating {
+  display: block;
+  float: right;
+  margin-top: -78rpx;
+  font-size: 68rpx;
+  color: #009688;
 }
 
-.info {
-  font-size: 24rpx;
-  color: #eee;
-  margin-top: 20rpx;
-  width: 80%;
+.movie-casts {
+  display: block;
+  font-size: 36rpx;
 }
 
-.summary {
-  width: 80%;
-  margin: 30rpx auto;
+.movie-intro {
+  position: absolute;
+  display: block;
+  bottom: -999rpx;
+  height: 1000rpx;
+  padding: 0 72rpx;
+  background: #fff;
+  opacity: .9;
+  overflow: hidden;
 }
 
-.label {
+.movie-intro-title {
   display: block;
   font-size: 30rpx;
-  color: #eee;
-  margin-bottom: 30rpx;
+  color: #000;
+  margin: 40rpx 0;
 }
 
-.content {
-  color: #eee;
-  font-size: 22rpx;
-  padding: 2em;
+.movie-intro-content {
+  color: #333;
+  font-size: 24rpx;
 }

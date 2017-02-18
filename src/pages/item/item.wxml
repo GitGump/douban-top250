@@ -1,17 +1,13 @@
 <view class="container">
   <loading hidden="{{ !isLoading }}">{{ commonStr.loading }}</loading>
   <image class="background" src="{{ movie.images.large }}" mode="aspectFill"/>
-  <view class="container" wx:if="{{ movie.title }}">
-    <view class="meta">
-      <image class="poster" src="{{ movie.images.large }}" mode="aspectFit"/>
-      <text class="title">{{ movie.title }}({{ movie.year }})</text>
-      <text class="info">{{ commonStr.movie.rating + movie.rating.average }}</text>
-      <text class="info">{{ commonStr.movie.director }}<block wx:for="{{ movie.directors }}" wx:for-item="director" wx:key="{{ director.id }}">{{ director.name }}</block></text>
-      <text class="info">{{ commonStr.movie.casts }}<block wx:for="{{ movie.casts }}" wx:for-item="cast" wx:key="{{ cast.id }}">{{ cast.name }} </block></text>
-    </view>
-    <view class="summary">
-      <text class="label">{{ commonStr.movie.content }}</text>
-      <text class="content">{{ movie.summary }}</text>
-    </view>
+  <view class="movie-info" wx:if="{{ movie.title }}">
+    <text class="movie-title">{{ movie.title }} ({{ movie.year }})</text>
+    <text class="movie-rating">{{ movie.rating.average}}</text>
+    <text class="movie-casts"><block wx:for="{{ movie.directors }}" wx:for-item="director" wx:key="director.id">{{ director.name }}</block>({{ itemStr.movie.director }})<block wx:for="{{ movie.casts }}" wx:for-item="cast" wx:key="cast.id">{{ ' / ' + cast.name}}</block></text>
+  </view>
+  <view class="movie-intro">
+    <text class="movie-intro-title">{{ movie.title +  commonStr.movie.content }}</text>
+    <text class="movie-intro-content">{{ movie.summary }}</text>
   </view>
 </view>

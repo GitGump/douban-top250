@@ -1,10 +1,11 @@
 <view class="container">
-	<view class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx:key="movie.id">
+	<view wx-if="{{ movies.length }}" class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx:key="movie.id">
 		<navigator url="../item/item?id={{ movie.id }}">
 			<image class="movie-post" src="{{ movie.images.large }}" mode="aspectFit"/>
 			<view class="movie-info">
 				<text class="movie-title">{{ movie.title }}</text>
-				<text class="movie-rating">{{ commonStr.movie.rating + movie.rating.average }}</text>
+				<text class="movie-rating">{{ movie.rating.average }}</text>
+				<text class="movie-rating-count">({{ movie.collect_count + indexStr.movie.collect_count }})</text>
 			</view>
 		</navigator>
 	</view>

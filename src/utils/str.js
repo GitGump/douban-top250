@@ -12,11 +12,19 @@ var str = {
 			casts: "主演：",
 			year: "上映年份：",
 			rating: "评分：",
-			content: "剧情介绍："
+			content: "剧情简介："
 		}
 	},
-	index: {},
-	item: {}
+	index: {
+		movie: {
+			collect_count: "人评价"
+		}
+	},
+	item: {
+		movie: {
+			director: "导演"
+		}
+	}
 }
 
 module.exports = {
