@@ -1,8 +1,82 @@
-.container {
+page {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-family: -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
+}
+
+.loading-bg, .error-bg {
+	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-page {
-	font-family: -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
+.spinner {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	top: 100rpx;
+	width: 100rpx;
+	height: 60rpx;
+	font-size: 20rpx;
+}
+
+.rect1, .rect2, .rect3, .rect4, .rect5 {
+	background-color: #009688;
+	height: 100%;
+	width: 12rpx;
+	margin-right: 5rpx;
+	display: inline-block;
+
+	-webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+	animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+	-webkit-animation-delay: -1.1s;
+	animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+	-webkit-animation-delay: -0.9s;
+	animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+	0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+	20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+	0%, 40%, 100% {
+		transform: scaleY(0.4);
+		-webkit-transform: scaleY(0.4);
+	}  20% {
+		transform: scaleY(1.0);
+		-webkit-transform: scaleY(1.0);
+	}
+}
+
+.error-cnt {
+	position: relative;
+	top: 10%;
+	width: 100%;
+	text-align: center;
+}
+
+.error-info {
+	display: block;
+	margin-top: 10%;
+	font-size: 28rpx;
+	color: #888;
 }

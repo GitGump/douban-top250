@@ -1,16 +1,28 @@
-<view class="container">
-	<view wx-if="{{ movies.length }}" class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx:key="movie.id">
-		<navigator url="../item/item?id={{ movie.id }}">
-			<image class="movie-post" src="{{ movie.images.large }}" mode="aspectFit"/>
-			<view class="movie-info">
-				<text class="movie-title">{{ movie.title }}</text>
-				<text class="movie-rating">{{ movie.rating.average }}</text>
-				<text class="movie-rating-count">({{ movie.collect_count + indexStr.movie.collect_count }})</text>
-			</view>
-		</navigator>
+<import src="../common/common.wxml"/>
+
+<!-- show loading -->
+<template is="commonLoadingPage" data="{{ isPageLoading }}"/>
+
+<!-- loading done -->
+<block wx:if="{{ !isPageLoading }}">
+	<!-- loading success -->
+	<view wx:if="{{ success }}" class="container">
+		<view wx:if="{{ movies.length }}" class="movie-list" wx:for="{{ movies }}" wx:for-item="movie" wx:key="movie.id">
+			<navigator url="../item/item?id={{ movie.id }}">
+				<image class="movie-post" src="{{ movie.images.large }}" mode="aspectFit"/>
+				<view class="movie-info">
+					<text class="movie-title">{{ movie.title }}</text>
+					<text class="movie-rating">{{ movie.rating.average }}</text>
+					<text class="movie-rating-count">({{ movie.collect_count + indexStr.movie.collect_count }})</text>
+				</view>
+			</navigator>
+		</view>
+		<loading hidden="{{ !isDataLoading}}">{{ commonStr.loading}}</loading>
+		<view class="bottom-tip" hidden="{{ hasMore }}">
+			<text>{{ commonStr.noMoreData }}</text>
+		</view>
 	</view>
-	<loading hidden="{{ !isLoading }}">{{ commonStr.loading }}</loading>
-	<view class="bottom-tip" hidden="{{ hasMore }}">
-		<text>{{ commonStr.noMoreData }}</text>
-	</view>
-</view>
+
+	<!-- loading fail -->
+	<template is="commonErrorPage" data="{{ success, commonStr }}"/>
+</block>

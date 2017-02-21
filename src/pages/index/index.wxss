@@ -49,4 +49,6 @@
 .bottom-tip {
     display: block;
     margin: 160rpx auto;
+    color: #888;
+    font-size: 32rpx;
 }

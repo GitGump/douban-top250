@@ -1,0 +1,24 @@
+<!-- common pages -->
+
+<!-- loading page -->
+<template name="commonLoadingPage">
+	<view wx:if="{{ isPageLoading }}" class="loading-bg">
+		<view class="spinner">
+			<text class="rect1"></text>
+			<text class="rect2"></text>
+			<text class="rect3"></text>
+			<text class="rect4"></text>
+			<text class="rect5"></text>
+		</view>
+	</view>
+</template>
+
+<!-- common error page -->
+<template name="commonErrorPage">
+    <view wx:if="{{ !success }}" bindtap="errorHandle" class="error-bg">
+        <view class="error-cnt">
+            <icon class="error-icon" type="warn" size="100"/>
+            <text class="error-info">{{ commonStr.error.common }}</text>
+        </view>
+    </view>
+</template>

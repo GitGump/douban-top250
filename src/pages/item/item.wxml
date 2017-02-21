@@ -1,13 +1,24 @@
-<view class="container">
-  <loading hidden="{{ !isLoading }}">{{ commonStr.loading }}</loading>
-  <image class="background" src="{{ movie.images.large }}" mode="aspectFill"/>
-  <view class="movie-info" wx:if="{{ movie.title }}">
-    <text class="movie-title">{{ movie.title }} ({{ movie.year }})</text>
-    <text class="movie-rating">{{ movie.rating.average}}</text>
-    <text class="movie-casts"><block wx:for="{{ movie.directors }}" wx:for-item="director" wx:key="director.id">{{ director.name }}</block>({{ itemStr.movie.director }})<block wx:for="{{ movie.casts }}" wx:for-item="cast" wx:key="cast.id">{{ ' / ' + cast.name}}</block></text>
-  </view>
-  <view class="movie-intro">
-    <text class="movie-intro-title">{{ movie.title +  commonStr.movie.content }}</text>
-    <text class="movie-intro-content">{{ movie.summary }}</text>
-  </view>
-</view>
+<import src="../common/common.wxml"/>
+
+<!-- show loading -->
+<template is="commonLoadingPage" data="{{ isPageLoading }}"/>
+
+<!-- loading done -->
+<block wx:if="{{ !isPageLoading }}">
+	<!-- loading success -->
+	<view wx:if="{{ success }}">
+	  <image class="background" src="{{ movie.images.large }}" mode="aspectFill"/>
+	  <view class="movie-info" wx:if="{{ movie.title }}">
+	    <text class="movie-title">{{ movie.title }} ({{ movie.year }})</text>
+	    <text class="movie-rating">{{ movie.rating.average}}</text>
+	    <text class="movie-casts"><block wx:for="{{ movie.directors }}" wx:for-item="director" wx:key="director.id">{{ director.name }}</block>({{ itemStr.movie.director }})<block wx:for="{{ movie.casts }}" wx:for-item="cast" wx:key="cast.id">{{ ' / ' + cast.name}}</block></text>
+	  </view>
+	  <view class="movie-intro">
+	    <text class="movie-intro-title">{{ movie.title +  commonStr.movie.content }}</text>
+	    <text class="movie-intro-content">{{ movie.summary }}</text>
+	  </view>
+	</view>
+
+	<!-- loading fail -->
+	<template is="commonErrorPage" data="{{ success, commonStr }}"/>
+</block>
