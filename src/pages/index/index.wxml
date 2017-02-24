@@ -17,7 +17,7 @@
 				</view>
 			</navigator>
 		</view>
-		<loading hidden="{{ !isDataLoading}}">{{ commonStr.loading}}</loading>
+		<!-- <loading hidden="{{ !isDataLoading}}">{{ commonStr.loading}}</loading> -->
 		<view class="bottom-tip" hidden="{{ hasMore }}">
 			<text>{{ commonStr.noMoreData }}</text>
 		</view>

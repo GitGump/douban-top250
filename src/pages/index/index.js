@@ -58,13 +58,16 @@ Page({
 		var that = this;
 		var startIndex = (that.data.page - 1) * that.data.count + 1;
 		var endIndex = that.data.page * that.data.count;
-		that.setData({
-			isDataLoading: true
-		});
+		// that.setData({
+		// 	isDataLoading: true
+		// });
+		// 使用微信小程序自带的导航栏加载动画，比模态加载用户友好
+		wx.showNavigationBarLoading();
 		app.douban.findMovieByType(app.data.type.top250, that.data.page, that.data.count, function(res) {
-			that.setData({
-				isDataLoading: false
-			});
+			// that.setData({
+			// 	isDataLoading: false
+			// });
+			wx.hideNavigationBarLoading();
 
 			if (!res.data.subjects.length) {
 				that.setData({
@@ -82,9 +85,10 @@ Page({
 			console.dir(res.data.subjects);
 			console.warn("So far we've got " + endIndex + " movies totally!");
 		}, function(res) {
-			that.setData({
-				isDataLoading: false
-			});
+			// that.setData({
+			// 	isDataLoading: false
+			// });
+			wx.hideNavigationBarLoading();
 
 			console.error("Error occurs as fetching data!")
 		});
