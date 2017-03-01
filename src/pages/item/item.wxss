@@ -12,11 +12,11 @@
 .movie-info {
   position: absolute;
   bottom: 0;
-  height: 200rpx;
+  width: 100%;
+  height: 210rpx;
   background: #fff;
-  padding: 20rpx 32rpx;
+  padding: 20rpx 0;
   opacity: .9;
-  overflow: hidden;
 }
 
 .movie-title {
@@ -41,22 +41,23 @@
 .movie-intro {
   position: absolute;
   display: block;
-  bottom: -999rpx;
-  height: 1000rpx;
-  padding: 0 72rpx;
+  bottom: -879rpx;
+  height: 880rpx;
+  padding: 0 56rpx;
   background: #fff;
   opacity: .9;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .movie-intro-title {
   display: block;
-  font-size: 30rpx;
-  color: #000;
-  margin: 40rpx 0;
+  font-size: 26rpx;
+  color: #888;
+  margin: 24rpx 0;
 }
 
 .movie-intro-content {
   color: #353535;
-  font-size: 24rpx;
+  font-size: 28rpx;
+  overflow-y: scroll;
 }
